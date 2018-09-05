@@ -1,0 +1,30 @@
+{
+  "name": "pakrac-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-eslint": "9.0.0",
+    "body-parser": "1.18.3",
+    "compression": "1.7.3",
+    "eslint": "5.5.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.1",
+    "express": "4.16.3",
+    "http": "0.0.0",
+    "lodash": "4.17.10",
+    "moment": "2.22.2",
+    "mongoose": "5.2.9"
+  },
+  "engines": {
+    "node": "8.11.4"
+  }
+}
