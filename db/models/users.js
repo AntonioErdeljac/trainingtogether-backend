@@ -14,6 +14,8 @@ const Users = mongoose.model('users', new Schema({
   personal: {
     firstName: schemaTypes.string(),
     lastName: schemaTypes.string(),
+    description: schemaTypes.string(),
+    dob: schemaTypes.date(),
   },
   address: {
     city: schemaTypes.string(),

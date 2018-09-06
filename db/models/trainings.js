@@ -6,8 +6,11 @@ const schemaTypes = require('./schemaTypes');
 const { Schema } = mongoose;
 
 const Trainings = mongoose.model('trainings', new Schema({
-  title: schemaTypes.string({ required: true }),
   author: { ref: 'users', type: Schema.Types.ObjectId },
+  description: schemaTypes.string(),
+  place: schemaTypes.string(),
+  time: schemaTypes.date(),
+  title: schemaTypes.string({ required: true }),
 
   __v: schemaTypes.number({ select: false }),
   createdAt: schemaTypes.date({ select: false }),
