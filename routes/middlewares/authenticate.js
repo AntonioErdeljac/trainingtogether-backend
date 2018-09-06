@@ -5,17 +5,15 @@ const { cookies, headers } = require('../../constants');
 
 module.exports = async (req, res, next) => {
   try {
-    const isBrowser = req.cookies;
-
-    if (isBrowser) {
-      if (req.cookies[cookies.AUTHENTICATION] && !req.headers[headers.AUTHENTICATION]) {
+    if (req.cookies) {
+      if (!req.cookies[cookies.AUTHENTICATION] && !req.headers[headers.AUTHENTICATION]) {
         return res.sendStatus(403);
       }
     } else if (!req.headers[headers.AUTHENTICATION]) {
       return res.sendStatus(403);
     }
 
-    const user = await db.Users.getBySessionToken(isBrowser ? req.cookies[cookies.AUTHENTICATION] : req.headers[headers.AUTHENTICATION]).lean();
+    const user = await db.Users.getBySessionToken(req.cookies ? req.cookies[cookies.AUTHENTICATION] : req.headers[headers.AUTHENTICATION]).lean();
 
     if (!user) {
       res.clearCookie(cookies.AUTHENTICATION, build.cookieOptions());
