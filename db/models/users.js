@@ -11,6 +11,10 @@ const Users = mongoose.model('users', new Schema({
     salt: schemaTypes.string({ select: false }),
     sessionToken: schemaTypes.string({ select: false }),
   },
+  personal: {
+    firstName: schemaTypes.string(),
+    lastName: schemaTypes.string(),
+  },
   address: {
     city: schemaTypes.string(),
     country: schemaTypes.string(),
