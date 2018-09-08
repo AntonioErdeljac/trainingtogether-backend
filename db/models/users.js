@@ -10,6 +10,7 @@ const Users = mongoose.model('users', new Schema({
     password: schemaTypes.string({ select: false }),
     salt: schemaTypes.string({ select: false }),
     sessionToken: schemaTypes.string({ select: false }),
+    facebookAccessToken: schemaTypes.string({ select: false }),
   },
   personal: {
     firstName: schemaTypes.string(),
